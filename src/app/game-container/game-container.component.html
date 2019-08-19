@@ -1,1 +1,25 @@
-<p>game-container works!</p>
+<div *ngIf="!result" class="page">
+  <mat-card>
+    <mat-card-header>
+      {{counter}}
+    </mat-card-header>
+  </mat-card>
+  <mat-card-content>
+    <button (click)="start()" *ngIf="startButton" mat-raised-button>Start game</button>
+    <button (click)="clicker()" *ngIf="startButton" mat-raised-button>Clicker</button>
+  </mat-card-content>
+  <mat-card-footer>
+    {{timer}}
+  </mat-card-footer>
+</div>
+<div *ngIf="result" class="game-result">
+  <mat-card>
+    <mat-card-header>
+      {{userName}} - {{label}}
+    </mat-card-header>
+    <mat-card-content>
+      <button (click)="close()" mat-raised-button>Close game</button>
+      <button (click)="restart()" mat-raised-button>Restart game</button>
+    </mat-card-content>
+  </mat-card>
+</div>
